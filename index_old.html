@@ -1,0 +1,332 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PO Status Viewer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet"
+          href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 10px;
+            background-color: #f0f0f0;
+        }
+        h2 {
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            font-size: 14px;
+        }
+        .dataTables_wrapper .dataTables_filter input {
+            width: 100%;
+            padding: 6px;
+            font-size: 16px;
+        }
+        th, td {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h2>PO Status (Searchable)</h2>
+    <table border="1" class="dataframe display nowrap" id="poTable">
+  <thead>
+    <tr style="text-align: right;">
+      <th>PO_No</th>
+      <th>TotalOrders</th>
+      <th>ShipCount</th>
+      <th>CommittedNotShip</th>
+      <th>ForPackOrders</th>
+      <th>UncommittedOrders</th>
+      <th>InTransitOrders</th>
+      <th>POStatus</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>224313</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>2</td>
+      <td>Completed PO</td>
+    </tr>
+    <tr>
+      <td>3T/PO252272</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Completed PO</td>
+    </tr>
+    <tr>
+      <td>4010016033</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Completed PO</td>
+    </tr>
+    <tr>
+      <td>4020007186</td>
+      <td>11</td>
+      <td>11</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Completed PO</td>
+    </tr>
+    <tr>
+      <td>4516260169</td>
+      <td>3</td>
+      <td>3</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Completed PO</td>
+    </tr>
+    <tr>
+      <td>4516351202_AIZU</td>
+      <td>15</td>
+      <td>12</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>3</td>
+      <td>Completed PO</td>
+    </tr>
+    <tr>
+      <td>4516351202_ARD</td>
+      <td>25</td>
+      <td>3</td>
+      <td>6</td>
+      <td>0</td>
+      <td>16</td>
+      <td>0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>4516351202_ASEWH</td>
+      <td>14</td>
+      <td>14</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Completed PO</td>
+    </tr>
+    <tr>
+      <td>4516351202_ATK</td>
+      <td>19</td>
+      <td>14</td>
+      <td>0</td>
+      <td>0</td>
+      <td>5</td>
+      <td>0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>4516351202_DMOS5</td>
+      <td>2</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Completed PO</td>
+    </tr>
+    <tr>
+      <td>4516351202_HNT</td>
+      <td>12</td>
+      <td>12</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Completed PO</td>
+    </tr>
+    <tr>
+      <td>4516351202_LFAB</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>Completed PO</td>
+    </tr>
+    <tr>
+      <td>4516351202_MIHO</td>
+      <td>31</td>
+      <td>31</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Completed PO</td>
+    </tr>
+    <tr>
+      <td>4516351202_SCT</td>
+      <td>29</td>
+      <td>29</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Completed PO</td>
+    </tr>
+    <tr>
+      <td>4516351202_TICL-FT</td>
+      <td>31</td>
+      <td>21</td>
+      <td>0</td>
+      <td>0</td>
+      <td>10</td>
+      <td>0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>4516351202_TICL-PR</td>
+      <td>6</td>
+      <td>5</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>Completed PO</td>
+    </tr>
+    <tr>
+      <td>4516351202_TII</td>
+      <td>8</td>
+      <td>7</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Completed PO</td>
+    </tr>
+    <tr>
+      <td>4516351202_TIPI</td>
+      <td>41</td>
+      <td>14</td>
+      <td>13</td>
+      <td>0</td>
+      <td>14</td>
+      <td>0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>4516351202_TITL</td>
+      <td>56</td>
+      <td>48</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>6</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>4516351202_UTL</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Completed PO</td>
+    </tr>
+    <tr>
+      <td>47188646</td>
+      <td>2</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Completed PO</td>
+    </tr>
+    <tr>
+      <td>47225672</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>Completed PO</td>
+    </tr>
+    <tr>
+      <td>4910171717</td>
+      <td>10</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>6</td>
+      <td>Completed PO</td>
+    </tr>
+    <tr>
+      <td>aerwe233</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>Completed PO</td>
+    </tr>
+    <tr>
+      <td>Global PO 4515617766</td>
+      <td>10</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>10</td>
+      <td>Completed PO</td>
+    </tr>
+    <tr>
+      <td>PP25-1057NI</td>
+      <td>3</td>
+      <td>3</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Completed PO</td>
+    </tr>
+    <tr>
+      <td>TBA</td>
+      <td>24</td>
+      <td>9</td>
+      <td>0</td>
+      <td>0</td>
+      <td>10</td>
+      <td>5</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#poTable').DataTable({
+                responsive: true,
+                pageLength: 25
+            });
+        });
+    </script>
+</body>
+</html>
