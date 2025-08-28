@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>PO Status</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h2 {
+            text-align: center;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+    <!-- DataTables CDN -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+</head>
+<body>
+
+<h2>PO Status (Searchable)</h2>
+<p><strong>Last updated:</strong> 2025-08-15 05:18:19</p>
+
+<table id="data-table">
+    <thead>
+        <tr><th>CustName</th><th>PO_No</th><th>TotalOrders</th><th>CommittedNotShip</th><th>UncommittedOrders</th><th>InTransitOrders</th><th>POStatus</th><th>ShipCount</th><th>ForPackOrders</th><th>DueDate</th><th>DaysUntilDue</th><th>DueCountdown</th><th>DueSpread</th></tr></thead><tbody><tr><td>NXP Malaysia Sdn. Bhd.</td><td>TBA</td><td>24</td><td>0</td><td>11</td><td>0</td><td>nan</td><td>13</td><td>0</td><td>2025-04-21 00:00:00</td><td>-116.0</td><td>OverDue by 116 days</td><td>Varies (2025-04-21 → 2025-08-04)</td></tr><tr><td>Texas Instruments Taiwan Limited</td><td>4910171717</td><td>10</td><td>0</td><td>2</td><td>0</td><td>nan</td><td>8</td><td>0</td><td>2025-06-04 00:00:00</td><td>-72.0</td><td>OverDue by 72 days</td><td>nan</td></tr><tr><td>Ardentec Korea Co., Ltd.</td><td>4516351202_ATK</td><td>32</td><td>0</td><td>2</td><td>0</td><td>nan</td><td>25</td><td>4</td><td>2025-08-13 00:00:00</td><td>-2.0</td><td>OverDue by 2 days</td><td>nan</td></tr><tr><td>TI (Philippines) Inc.</td><td>4516351202_TIPI</td><td>112</td><td>0</td><td>24</td><td>10</td><td>nan</td><td>66</td><td>12</td><td>2025-08-13 00:00:00</td><td>-2.0</td><td>OverDue by 2 days</td><td>Varies (2025-08-13 → 2025-08-22)</td></tr><tr><td>TI Philippines, Inc - Clark FT</td><td>4516351202_TICL-FT</td><td>71</td><td>1</td><td>14</td><td>10</td><td>nan</td><td>46</td><td>0</td><td>2025-08-13 00:00:00</td><td>-2.0</td><td>OverDue by 2 days</td><td>Varies (2025-08-13 → 2025-08-26)</td></tr><tr><td>Texas Instruments SCT</td><td>4516351202_SCT</td><td>67</td><td>0</td><td>1</td><td>0</td><td>nan</td><td>62</td><td>4</td><td>2025-08-14 00:00:00</td><td>-1.0</td><td>OverDue by 1 days</td><td>nan</td></tr><tr><td>TEXAS INSTRUMENTS (INDIA) Pvt. Ltd</td><td>4516351202_TII</td><td>28</td><td>0</td><td>6</td><td>14</td><td>nan</td><td>8</td><td>0</td><td>2025-08-26 00:00:00</td><td>11.0</td><td>11 days before Due</td><td>nan</td></tr><tr><td>Texas Instruments Taiwan</td><td>4516351202_TITL</td><td>76</td><td>2</td><td>9</td><td>0</td><td>nan</td><td>65</td><td>0</td><td>2025-08-26 00:00:00</td><td>11.0</td><td>11 days before Due</td><td>nan</td></tr><tr><td>TI Philippines, Inc - Clark</td><td>4516351202_TICL-PR</td><td>11</td><td>0</td><td>1</td><td>2</td><td>nan</td><td>8</td><td>0</td><td>2025-08-26 00:00:00</td><td>11.0</td><td>11 days before Due</td><td>nan</td></tr><tr><td>ST Microelectronics Pte Ltd.</td><td>4020007647</td><td>5</td><td>4</td><td>1</td><td>0</td><td>nan</td><td>0</td><td>0</td><td>2025-08-20 00:00:00</td><td>5.0</td><td>5 days before Due</td><td>nan</td></tr><tr><td>Swindon Silicon System</td><td>TBD</td><td>2</td><td>0</td><td>2</td><td>0</td><td>nan</td><td>0</td><td>0</td><td>2025-08-20 00:00:00</td><td>5.0</td><td>5 days before Due</td><td>nan</td></tr><tr><td>TEXAS INSTRUMENTS  MALAYSIA</td><td>Global PO 4516351202</td><td>46</td><td>0</td><td>9</td><td>9</td><td>nan</td><td>28</td><td>0</td><td>2025-08-20 00:00:00</td><td>5.0</td><td>5 days before Due</td><td>Varies (2025-08-20 → 2025-08-26)</td></tr><tr><td>Tongfu Microelectronics Co.,Ltd.</td><td>4516351202_NFME</td><td>15</td><td>0</td><td>6</td><td>0</td><td>nan</td><td>0</td><td>9</td><td>2025-08-15 00:00:00</td><td>0.0</td><td>Due Today</td><td>nan</td></tr><tr><td>ARDENTEC CORPORATION</td><td>4516351202_ARD</td><td>40</td><td>0</td><td>0</td><td>15</td><td>nan</td><td>25</td><td>0</td><td>NaT</td><td>nan</td><td>nan</td><td>nan</td></tr><tr><td>Analog Devices Gen. Trias Inc. (ADGT)</td><td>47225672</td><td>1</td><td>0</td><td>0</td><td>1</td><td>nan</td><td>0</td><td>0</td><td>NaT</td><td>nan</td><td>nan</td><td>nan</td></tr><tr><td>Texas Instruments LFAB</td><td>4516351202_LFAB</td><td>1</td><td>0</td><td>0</td><td>1</td><td>nan</td><td>0</td><td>0</td><td>NaT</td><td>nan</td><td>nan</td><td>nan</td></tr><tr><td>Texas Instruments AIZU</td><td>4516351202_AIZU</td><td>19</td><td>0</td><td>0</td><td>0</td><td>Completed PO</td><td>18</td><td>1</td><td>NaT</td><td>nan</td><td>nan</td><td>nan</td></tr><tr><td>Analog Devices Gen. Trias Inc. (ADGT)</td><td>47188646</td><td>4</td><td>0</td><td>0</td><td>0</td><td>Completed PO</td><td>4</td><td>0</td><td>NaT</td><td>nan</td><td>nan</td><td>nan</td></tr><tr><td>Analog Devices Gen. Trias Inc. (ADGT)</td><td>47218149</td><td>10</td><td>0</td><td>0</td><td>0</td><td>Completed PO</td><td>10</td><td>0</td><td>NaT</td><td>nan</td><td>nan</td><td>nan</td></tr><tr><td>Analog Devices Gen. Trias Inc. (ADGT)</td><td>47245848</td><td>1</td><td>0</td><td>0</td><td>0</td><td>Completed PO</td><td>1</td><td>0</td><td>NaT</td><td>nan</td><td>nan</td><td>nan</td></tr><tr><td>Analog Devices Gen. Trias Inc. (ADGT)</td><td>47245933</td><td>1</td><td>0</td><td>0</td><td>0</td><td>Completed PO</td><td>1</td><td>0</td><td>NaT</td><td>nan</td><td>nan</td><td>nan</td></tr><tr><td>ASE (WEIHAI), INC. Subcon-ASE A/T Weihai</td><td>4516351202_ASEWH</td><td>14</td><td>0</td><td>0</td><td>0</td><td>Completed PO</td><td>14</td><td>0</td><td>NaT</td><td>nan</td><td>nan</td><td>nan</td></tr><tr><td>Hana Semiconductor (Ayutthaya) Co., Ltd (HNT)</td><td>4516351202_HNT</td><td>12</td><td>0</td><td>0</td><td>0</td><td>Completed PO</td><td>12</td><td>0</td><td>NaT</td><td>nan</td><td>nan</td><td>nan</td></tr><tr><td>Hana Semiconductor (Ayutthaya) Co., Ltd (HNT)</td><td>4910172298</td><td>8</td><td>0</td><td>0</td><td>0</td><td>Completed PO</td><td>8</td><td>0</td><td>NaT</td><td>nan</td><td>nan</td><td>nan</td></tr><tr><td>JMC Worldwide Inc.</td><td>ES072525</td><td>2</td><td>0</td><td>0</td><td>0</td><td>Completed PO</td><td>2</td><td>0</td><td>NaT</td><td>nan</td><td>nan</td><td>nan</td></tr><tr><td>Lingsen Precision Industries Ltd.</td><td>4516260169</td><td>10</td><td>0</td><td>0</td><td>0</td><td>Completed PO</td><td>10</td><td>0</td><td>NaT</td><td>nan</td><td>nan</td><td>nan</td></tr><tr><td>Microprecision Calibration Inc.</td><td>PP25-1057NI</td><td>3</td><td>0</td><td>0</td><td>0</td><td>Completed PO</td><td>3</td><td>0</td><td>NaT</td><td>nan</td><td>nan</td><td>nan</td></tr><tr><td>Microprecision Calibration Inc.</td><td>PP25-1069NI</td><td>1</td><td>0</td><td>0</td><td>0</td><td>Completed PO</td><td>1</td><td>0</td><td>NaT</td><td>nan</td><td>nan</td><td>nan</td></tr><tr><td>NXP Malaysia Sdn. Bhd.</td><td>3T/PO252272</td><td>1</td><td>0</td><td>0</td><td>0</td><td>Completed PO</td><td>1</td><td>0</td><td>NaT</td><td>nan</td><td>nan</td><td>nan</td></tr><tr><td>ROCHESTER ELECTRONICS</td><td>252395</td><td>59</td><td>0</td><td>0</td><td>0</td><td>Completed PO</td><td>59</td><td>0</td><td>NaT</td><td>nan</td><td>nan</td><td>nan</td></tr><tr><td>ST Microelectronics Pte Ltd.</td><td>4020007186</td><td>11</td><td>0</td><td>0</td><td>0</td><td>Completed PO</td><td>11</td><td>0</td><td>NaT</td><td>nan</td><td>nan</td><td>nan</td></tr><tr><td>STMicroelectronics, Inc.</td><td>4010016033</td><td>1</td><td>0</td><td>0</td><td>0</td><td>Completed PO</td><td>1</td><td>0</td><td>NaT</td><td>nan</td><td>nan</td><td>nan</td></tr><tr><td>Texas Instruments DMOS5</td><td>4516351202_DMOS5</td><td>2</td><td>0</td><td>0</td><td>0</td><td>Completed PO</td><td>2</td><td>0</td><td>NaT</td><td>nan</td><td>nan</td><td>nan</td></tr><tr><td>TEXAS INSTRUMENTS INCORPORATED</td><td>4516250020</td><td>2</td><td>0</td><td>0</td><td>0</td><td>Completed PO</td><td>2</td><td>0</td><td>NaT</td><td>nan</td><td>nan</td><td>nan</td></tr><tr><td>TEXAS INSTRUMENTS INCORPORATED</td><td>4516317906</td><td>2</td><td>0</td><td>0</td><td>0</td><td>Completed PO</td><td>2</td><td>0</td><td>NaT</td><td>nan</td><td>nan</td><td>nan</td></tr><tr><td>Texas Instruments Japan Limited MIHO Plant (MIHO 8 FAB)</td><td>4516351202_MIHO</td><td>41</td><td>0</td><td>0</td><td>0</td><td>Completed PO</td><td>41</td><td>0</td><td>NaT</td><td>nan</td><td>nan</td><td>nan</td></tr><tr><td>Texas Instruments SFAB</td><td>4516351202_SFAB</td><td>1</td><td>0</td><td>0</td><td>0</td><td>Completed PO</td><td>1</td><td>0</td><td>NaT</td><td>nan</td><td>nan</td><td>nan</td></tr><tr><td>UTAC Thai Limited ( UTL 3)</td><td>43151446</td><td>1</td><td>0</td><td>0</td><td>0</td><td>Completed PO</td><td>1</td><td>0</td><td>NaT</td><td>nan</td><td>nan</td><td>nan</td></tr><tr><td>UTAC Thai Limited ( UTL 3)</td><td>4516351202_UTL</td><td>1</td><td>0</td><td>0</td><td>0</td><td>Completed PO</td><td>1</td><td>0</td><td>NaT</td><td>nan</td><td>nan</td><td>nan</td></tr>
+    </tbody>
+</table>
+
+<!-- DataTables JS -->
+<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#data-table').DataTable();
+    });
+</script>
+
+</body>
+</html>

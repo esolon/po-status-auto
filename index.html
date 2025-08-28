@@ -1,176 +1,51 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-  <meta charset="utf-8" />
-  <title>E-Watch — PO Status</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <style>
-    :root{--bd:#e5e7eb;--tx:#0f172a;--mut:#64748b;--hi:#059669;--bg:#ffffff;--pill:#f1f5f9;--ok:#ecfdf5;--bad:#fff1f2}
-    *{box-sizing:border-box} body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;background:var(--bg);color:var(--tx)}
-    .wrap{max-width:1120px;margin:0 auto;padding:16px}
-    header{position:sticky;top:0;z-index:10;background:#fffdd;backdrop-filter:saturate(180%) blur(6px);background:#fff;border-bottom:1px solid var(--bd)}
-    .hdr{display:flex;align-items:center;gap:12px;padding:12px 16px}
-    .logo{width:36px;height:36px;border-radius:999px;background:var(--hi);color:#fff;display:grid;place-items:center;font-weight:700}
-    .grid{display:grid;grid-template-columns:1fr;gap:24px;margin-top:20px}
-    @media(min-width:960px){.grid{grid-template-columns:280px 1fr}}
-    .card{border:1px solid var(--bd);border-radius:16px;box-shadow:0 1px 2px rgba(0,0,0,.03);background:#fff}
-    .pad{padding:16px}
-    .title{font-size:18px;font-weight:700;margin:0}
-    .mut{font-size:12px;color:var(--mut)}
-    .row{display:flex;gap:8px;flex-wrap:wrap}
-    .input,.select,button{font-size:14px;border:1px solid var(--bd);border-radius:12px;padding:8px 10px;background:#fff}
-    .btn{cursor:pointer} .btn:hover{background:#f8fafc}
-    .list{display:grid;grid-template-columns:1fr;gap:16px}
-    @media(min-width:640px){.list{grid-template-columns:repeat(2,1fr)}}
-    @media(min-width:1200px){.list{grid-template-columns:repeat(3,1fr)}}
-    .po{transition:box-shadow .2s ease} .po:hover{box-shadow:0 4px 16px rgba(0,0,0,.08)}
-    .pill{display:inline-block;background:var(--pill);padding:2px 8px;border-radius:999px;font-size:12px;color:#065f46}
-    .kv{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:8px}
-    .box{border:1px solid var(--bd);border-radius:12px;padding:10px;background:#f8fafc}
-    .ok{background:var(--ok)} .bad{background:var(--bad)}
-    footer{border-top:1px solid var(--bd);margin-top:24px}
-    .ctr{text-align:center;color:var(--mut);padding:24px}
-  </style>
+    <meta charset="UTF-8">
+    <title>PO Status</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h2 {
+            text-align: center;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+    <!-- DataTables CDN -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
 </head>
 <body>
-  <header>
-    <div class="wrap hdr">
-      <div class="logo">E</div>
-      <div>
-        <div class="title">E-Watch — PO Status</div>
-        <div class="mut">Live priority board</div>
-      </div>
-    </div>
-  </header>
 
-  <main class="wrap grid">
-    <!-- Sidebar / Filters -->
-    <aside class="card pad">
-      <h3 style="margin-top:0;margin-bottom:12px;font-size:16px">Filters</h3>
-      <div class="row" style="margin-bottom:8px">
-        <input id="q" class="input" placeholder="Search PO / SO / Customer" style="width:100%">
-      </div>
-      <div class="row" style="margin-bottom:8px">
-        <select id="customer" class="select" style="flex:1"><option value="">All customers</option></select>
-      </div>
-      <div class="row" style="margin-bottom:8px">
-        <select id="status" class="select" style="flex:1"><option value="">All statuses</option></select>
-      </div>
-      <div class="row">
-        <label class="mut" style="align-self:center">Sort</label>
-        <select id="sort" class="select">
-          <option value="priority">Priority</option>
-          <option value="due">Due soonest</option>
-          <option value="cust">Customer A→Z</option>
-        </select>
-        <button id="reset" class="btn">Reset</button>
-      </div>
-    </aside>
+<h2>PO Status (Searchable)</h2>
+<p><strong>Last updated:</strong> 2025-08-28 14:06:43</p>
 
-    <!-- Results -->
-    <section>
-      <div id="list" class="list"></div>
-      <div id="empty" class="ctr" style="display:none">No POs match your filters.</div>
-    </section>
-  </main>
+<table id="data-table">
+    <thead>
+        <tr><th>CustName</th><th>PO_No</th><th>TotalOrders</th><th>CommittedNotShip</th><th>UncommittedOrders</th><th>InTransitOrders</th><th>POStatus</th><th>ShipCount</th><th>ForPackOrders</th><th>DueDate</th><th>DaysUntilDue</th><th>DueCountdown</th><th>DueSpread</th></tr></thead><tbody><tr><td>NXP Malaysia Sdn. Bhd.</td><td>TBA</td><td>23</td><td>0</td><td>7</td><td>0</td><td>nan</td><td>16</td><td>0</td><td>2025-04-21 00:00:00</td><td>-129.0</td><td>OverDue by 129 days</td><td>Varies (2025-04-21 → 2025-08-04)</td></tr><tr><td>Texas Instruments Taiwan Limited</td><td>4910171717</td><td>10</td><td>0</td><td>2</td><td>0</td><td>nan</td><td>8</td><td>0</td><td>2025-06-04 00:00:00</td><td>-85.0</td><td>OverDue by 85 days</td><td>nan</td></tr><tr><td>TI (Philippines) Inc.</td><td>4516351202_TIPI</td><td>136</td><td>5</td><td>43</td><td>10</td><td>nan</td><td>78</td><td>0</td><td>2025-08-13 00:00:00</td><td>-15.0</td><td>OverDue by 15 days</td><td>Varies (2025-08-13 → 2025-08-29)</td></tr><tr><td>TI Philippines, Inc - Clark FT</td><td>4516351202_TICL-FT</td><td>81</td><td>21</td><td>14</td><td>0</td><td>nan</td><td>46</td><td>0</td><td>2025-08-13 00:00:00</td><td>-15.0</td><td>OverDue by 15 days</td><td>Varies (2025-08-13 → 2025-09-09)</td></tr><tr><td>Swindon Silicon System</td><td>TBD</td><td>2</td><td>0</td><td>2</td><td>0</td><td>nan</td><td>0</td><td>0</td><td>2025-08-20 00:00:00</td><td>-8.0</td><td>OverDue by 8 days</td><td>nan</td></tr><tr><td>Texas Instruments Taiwan</td><td>4516351202_TITL</td><td>90</td><td>1</td><td>17</td><td>0</td><td>nan</td><td>72</td><td>0</td><td>2025-08-26 00:00:00</td><td>-2.0</td><td>OverDue by 2 days</td><td>Varies (2025-08-26 → 2025-09-10)</td></tr><tr><td>TI Philippines, Inc - Clark</td><td>4516351202_TICL-PR</td><td>22</td><td>1</td><td>11</td><td>2</td><td>nan</td><td>8</td><td>0</td><td>2025-08-26 00:00:00</td><td>-2.0</td><td>OverDue by 2 days</td><td>Varies (2025-08-26 → 2025-08-29)</td></tr><tr><td>ARDENTEC CORPORATION</td><td>4516351202_ARD</td><td>54</td><td>3</td><td>6</td><td>0</td><td>nan</td><td>45</td><td>0</td><td>2025-08-27 00:00:00</td><td>-1.0</td><td>OverDue by 1 days</td><td>Varies (2025-08-27 → 2025-08-29)</td></tr><tr><td>Texas Instruments SFAB</td><td>4516351202_SFAB</td><td>4</td><td>0</td><td>3</td><td>0</td><td>nan</td><td>1</td><td>0</td><td>2025-09-09 00:00:00</td><td>12.0</td><td>12 days before Due</td><td>nan</td></tr><tr><td>Ardentec Korea Co., Ltd.</td><td>4516351202_ATK</td><td>33</td><td>0</td><td>1</td><td>0</td><td>nan</td><td>32</td><td>0</td><td>2025-09-02 00:00:00</td><td>5.0</td><td>5 days before Due</td><td>nan</td></tr><tr><td>ASE (WEIHAI), INC. Subcon-ASE A/T Weihai</td><td>4516351202_ASEWH</td><td>17</td><td>0</td><td>1</td><td>0</td><td>nan</td><td>16</td><td>0</td><td>2025-08-29 00:00:00</td><td>1.0</td><td>1 days before Due</td><td>nan</td></tr><tr><td>TEXAS INSTRUMENTS  MALAYSIA</td><td>Global PO 4516351202</td><td>57</td><td>3</td><td>9</td><td>0</td><td>nan</td><td>45</td><td>0</td><td>2025-08-29 00:00:00</td><td>1.0</td><td>1 days before Due</td><td>Varies (2025-08-29 → 2025-09-11)</td></tr><tr><td>Texas Instruments FTLABS</td><td>4516351202_FTLABS</td><td>1</td><td>0</td><td>1</td><td>0</td><td>nan</td><td>0</td><td>0</td><td>2025-08-29 00:00:00</td><td>1.0</td><td>1 days before Due</td><td>nan</td></tr><tr><td>Texas Instruments Japan Limited MIHO Plant (MIHO 8 FAB)</td><td>4516351202_MIHO</td><td>42</td><td>0</td><td>1</td><td>0</td><td>nan</td><td>41</td><td>0</td><td>2025-08-29 00:00:00</td><td>1.0</td><td>1 days before Due</td><td>nan</td></tr><tr><td>Texas Instruments SCT</td><td>4516351202_SCT</td><td>71</td><td>0</td><td>4</td><td>0</td><td>nan</td><td>67</td><td>0</td><td>2025-08-29 00:00:00</td><td>1.0</td><td>1 days before Due</td><td>nan</td></tr><tr><td>TEXAS INSTRUMENTS (INDIA) Pvt. Ltd</td><td>4516351202_TII</td><td>28</td><td>0</td><td>0</td><td>14</td><td>nan</td><td>14</td><td>0</td><td>NaT</td><td>nan</td><td>nan</td><td>nan</td></tr><tr><td>Texas Instruments DMOS5</td><td>4516351202_DMOS5</td><td>10</td><td>0</td><td>0</td><td>8</td><td>nan</td><td>2</td><td>0</td><td>NaT</td><td>nan</td><td>nan</td><td>nan</td></tr><tr><td>Analog Devices Gen. Trias Inc. (ADGT)</td><td>47225672</td><td>1</td><td>0</td><td>0</td><td>1</td><td>nan</td><td>0</td><td>0</td><td>NaT</td><td>nan</td><td>nan</td><td>nan</td></tr><tr><td>Texas Instruments LFAB</td><td>4516351202_LFAB</td><td>1</td><td>0</td><td>0</td><td>1</td><td>nan</td><td>0</td><td>0</td><td>NaT</td><td>nan</td><td>nan</td><td>nan</td></tr><tr><td>Analog Devices Gen. Trias Inc. (ADGT)</td><td>47188646</td><td>4</td><td>0</td><td>0</td><td>0</td><td>Completed PO</td><td>4</td><td>0</td><td>NaT</td><td>nan</td><td>nan</td><td>nan</td></tr><tr><td>Analog Devices Gen. Trias Inc. (ADGT)</td><td>47218149</td><td>10</td><td>0</td><td>0</td><td>0</td><td>Completed PO</td><td>10</td><td>0</td><td>NaT</td><td>nan</td><td>nan</td><td>nan</td></tr><tr><td>Analog Devices Gen. Trias Inc. (ADGT)</td><td>47245848</td><td>1</td><td>0</td><td>0</td><td>0</td><td>Completed PO</td><td>1</td><td>0</td><td>NaT</td><td>nan</td><td>nan</td><td>nan</td></tr><tr><td>Analog Devices Gen. Trias Inc. (ADGT)</td><td>47245933</td><td>1</td><td>0</td><td>0</td><td>0</td><td>Completed PO</td><td>1</td><td>0</td><td>NaT</td><td>nan</td><td>nan</td><td>nan</td></tr><tr><td>Analog Devices Gen. Trias Inc. (ADGT)</td><td>47253728</td><td>1</td><td>0</td><td>0</td><td>0</td><td>Completed PO</td><td>1</td><td>0</td><td>NaT</td><td>nan</td><td>nan</td><td>nan</td></tr><tr><td>Hana Semiconductor (Ayutthaya) Co., Ltd (HNT)</td><td>4516351202_HNT</td><td>14</td><td>0</td><td>0</td><td>0</td><td>Completed PO</td><td>14</td><td>0</td><td>NaT</td><td>nan</td><td>nan</td><td>nan</td></tr><tr><td>Hana Semiconductor (Ayutthaya) Co., Ltd (HNT)</td><td>4910172298</td><td>8</td><td>0</td><td>0</td><td>0</td><td>Completed PO</td><td>8</td><td>0</td><td>NaT</td><td>nan</td><td>nan</td><td>nan</td></tr><tr><td>JMC Worldwide Inc.</td><td>ES072525</td><td>2</td><td>0</td><td>0</td><td>0</td><td>Completed PO</td><td>2</td><td>0</td><td>NaT</td><td>nan</td><td>nan</td><td>nan</td></tr><tr><td>Lingsen Precision Industries Ltd.</td><td>4516260169</td><td>14</td><td>0</td><td>0</td><td>0</td><td>Completed PO</td><td>14</td><td>0</td><td>NaT</td><td>nan</td><td>nan</td><td>nan</td></tr><tr><td>Microprecision Calibration Inc.</td><td>PP25-1057NI</td><td>3</td><td>0</td><td>0</td><td>0</td><td>Completed PO</td><td>3</td><td>0</td><td>NaT</td><td>nan</td><td>nan</td><td>nan</td></tr><tr><td>Microprecision Calibration Inc.</td><td>PP25-1069NI</td><td>1</td><td>0</td><td>0</td><td>0</td><td>Completed PO</td><td>1</td><td>0</td><td>NaT</td><td>nan</td><td>nan</td><td>nan</td></tr><tr><td>NXP Malaysia Sdn. Bhd.</td><td>3T/PO252272</td><td>1</td><td>0</td><td>0</td><td>0</td><td>Completed PO</td><td>1</td><td>0</td><td>NaT</td><td>nan</td><td>nan</td><td>nan</td></tr><tr><td>ROCHESTER ELECTRONICS</td><td>252395</td><td>59</td><td>0</td><td>0</td><td>0</td><td>Completed PO</td><td>59</td><td>0</td><td>NaT</td><td>nan</td><td>nan</td><td>nan</td></tr><tr><td>ST Microelectronics Pte Ltd.</td><td>4020007186</td><td>11</td><td>0</td><td>0</td><td>0</td><td>Completed PO</td><td>11</td><td>0</td><td>NaT</td><td>nan</td><td>nan</td><td>nan</td></tr><tr><td>ST Microelectronics Pte Ltd.</td><td>4020007647</td><td>5</td><td>0</td><td>0</td><td>0</td><td>Completed PO</td><td>5</td><td>0</td><td>NaT</td><td>nan</td><td>nan</td><td>nan</td></tr><tr><td>STMicroelectronics, Inc.</td><td>4010016033</td><td>1</td><td>0</td><td>0</td><td>0</td><td>Completed PO</td><td>1</td><td>0</td><td>NaT</td><td>nan</td><td>nan</td><td>nan</td></tr><tr><td>Texas Instruments AIZU</td><td>4516351202_AIZU</td><td>19</td><td>0</td><td>0</td><td>0</td><td>Completed PO</td><td>19</td><td>0</td><td>NaT</td><td>nan</td><td>nan</td><td>nan</td></tr><tr><td>TEXAS INSTRUMENTS INCORPORATED</td><td>4516250020</td><td>2</td><td>0</td><td>0</td><td>0</td><td>Completed PO</td><td>2</td><td>0</td><td>NaT</td><td>nan</td><td>nan</td><td>nan</td></tr><tr><td>TEXAS INSTRUMENTS INCORPORATED</td><td>4516317906</td><td>2</td><td>0</td><td>0</td><td>0</td><td>Completed PO</td><td>2</td><td>0</td><td>NaT</td><td>nan</td><td>nan</td><td>nan</td></tr><tr><td>Tongfu Microelectronics Co.,Ltd.</td><td>4516351202_NFME</td><td>15</td><td>0</td><td>0</td><td>0</td><td>Completed PO</td><td>15</td><td>0</td><td>NaT</td><td>nan</td><td>nan</td><td>nan</td></tr><tr><td>UTAC Thai Limited ( UTL 3)</td><td>43151446</td><td>1</td><td>0</td><td>0</td><td>0</td><td>Completed PO</td><td>1</td><td>0</td><td>NaT</td><td>nan</td><td>nan</td><td>nan</td></tr><tr><td>UTAC Thai Limited ( UTL 3)</td><td>4516351202_UTL</td><td>1</td><td>0</td><td>0</td><td>0</td><td>Completed PO</td><td>1</td><td>0</td><td>NaT</td><td>nan</td><td>nan</td><td>nan</td></tr>
+    </tbody>
+</table>
 
-  <footer>
-    <div class="wrap ctr">© <span id="yr"></span> E-Watch. PO Status board.</div>
-  </footer>
-
-  <script>
-    const $ = s => document.querySelector(s);
-    const $$ = s => Array.from(document.querySelectorAll(s));
-    const yr = new Date().getFullYear(); $('#yr').textContent = yr;
-
-    const state = { items: [], q:'', customer:'', status:'', sort:'priority' };
-
-    const fmtDate = d => d ? new Date(d).toLocaleDateString() : '';
-    const unique = arr => Array.from(new Set(arr.filter(Boolean)));
-
-    function compute(list){
-      let out = [...list];
-      const q = state.q.toLowerCase().trim();
-      if(q){
-        out = out.filter(i => [i.PO_No, i.SO_No, i.Customer].join(' ').toLowerCase().includes(q));
-      }
-      if(state.customer) out = out.filter(i => i.Customer === state.customer);
-      if(state.status)   out = out.filter(i => i.POStatus === state.status);
-
-      switch(state.sort){
-        case 'priority':
-          out.sort((a,b)=>{
-            const ad=(a.DaysUntilDue??9999), bd=(b.DaysUntilDue??9999);
-            if(ad!==bd) return ad-bd;
-            const apr=(b.ForPackOrders??0)+(b.CommittedNotShip??0) - ((a.ForPackOrders??0)+(a.CommittedNotShip??0));
-            if(apr!==0) return apr;
-            return (a.PO_No||'').localeCompare(b.PO_No||'');
-          });
-          break;
-        case 'due':
-          out.sort((a,b)=>(a.DaysUntilDue??9999)-(b.DaysUntilDue??9999)); break;
-        case 'cust':
-          out.sort((a,b)=>(a.Customer||'').localeCompare(b.Customer||'')); break;
-      }
-      return out;
-    }
-
-    function render(list){
-      const wrap = $('#list');
-      wrap.innerHTML = '';
-      $('#empty').style.display = list.length ? 'none' : 'block';
-      list.forEach(i=>{
-        const overdue = (i.DaysUntilDue??999) < 0;
-        const div = document.createElement('article');
-        div.className = 'card po';
-        div.innerHTML = `
-          <div class="pad">
-            <div class="pill">${i.POStatus || 'Open'}</div>
-            <h4 style="margin:8px 0 2px;font-size:14px">PO ${i.PO_No}${i.SO_No ? ` • SO ${i.SO_No}` : ''}</h4>
-            <div class="mut" style="margin-bottom:6px">${i.Customer || ''}</div>
-            <div class="kv">
-              <div class="box"><div class="mut" style="font-size:11px">Due Date</div><div style="font-weight:600">${fmtDate(i.DueDate)}</div></div>
-              <div class="box ${overdue ? 'bad':'ok'}"><div class="mut" style="font-size:11px">Days Until Due</div><div style="font-weight:600">${i.DaysUntilDue ?? ''}</div></div>
-              <div class="box"><div class="mut" style="font-size:11px">For Pack</div><div style="font-weight:600">${i.ForPackOrders ?? 0}</div></div>
-              <div class="box"><div class="mut" style="font-size:11px">Committed Not Ship</div><div style="font-weight:600">${i.CommittedNotShip ?? 0}</div></div>
-              <div class="box"><div class="mut" style="font-size:11px">Shipped / Total</div><div style="font-weight:600">${i.ShipCount ?? 0} / ${i.TotalOrders ?? 0}</div></div>
-              <div class="box"><div class="mut" style="font-size:11px">In Transit</div><div style="font-weight:600">${i.InTransit ?? 0}</div></div>
-            </div>
-          </div>`;
-        wrap.appendChild(div);
-      });
-    }
-
-    function hydrateFilters(items){
-      const cust = $('#customer'); const stat = $('#status');
-      unique(items.map(i=>i.Customer)).sort().forEach(c=>{
-        const o=document.createElement('option'); o.value=c; o.textContent=c; cust.appendChild(o);
-      });
-      unique(items.map(i=>i.POStatus)).sort().forEach(s=>{
-        const o=document.createElement('option'); o.value=s; o.textContent=s; stat.appendChild(o);
-      });
-    }
-
-    // Wire UI
-    $('#q').addEventListener('input', e=>{ state.q=e.target.value; render(compute(state.items)); });
-    $('#customer').addEventListener('change', e=>{ state.customer=e.target.value; render(compute(state.items)); });
-    $('#status').addEventListener('change', e=>{ state.status=e.target.value; render(compute(state.items)); });
-    $('#sort').addEventListener('change', e=>{ state.sort=e.target.value; render(compute(state.items)); });
-    $('#reset').addEventListener('click', ()=>{
-      state.q=''; state.customer=''; state.status=''; state.sort='priority';
-      $('#q').value=''; $('#customer').value=''; $('#status').value=''; $('#sort').value='priority';
-      render(compute(state.items));
+<!-- DataTables JS -->
+<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#data-table').DataTable();
     });
+</script>
 
-    // Load data
-    fetch('po-status.json', {cache:'no-store'})
-      .then(r=>r.json())
-      .then(data=>{
-        state.items = data;
-        hydrateFilters(state.items);
-        render(compute(state.items));
-      })
-      .catch(()=>{ $('#empty').style.display='block'; $('#empty').textContent='po-status.json not found.'; });
-  </script>
 </body>
 </html>
